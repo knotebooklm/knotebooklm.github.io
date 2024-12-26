@@ -1,0 +1,39 @@
+---
+import Layout from "@layouts/Layout.astro";
+import RollCall from "@components/RollCall.astro";
+
+const projectName = "KnotebookLM";
+---
+
+<Layout title={projectName}>
+  <main id="main">
+    <div class="centered">
+      <div>
+        <h1 class="title">{projectName}</h1>
+        <RollCall />
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .centered {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  code {
+    word-break: break-all;
+  }
+
+  .code-block {
+    color: var(--color-yellow) !important;
+  }
+
+  .title {
+    font-size: var(--step-7);
+    text-shadow: 1px 1px 5px var(--color-yellow);
+  }
+</style>

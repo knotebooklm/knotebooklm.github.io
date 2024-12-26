@@ -1,0 +1,30 @@
+---
+import links from "@data/links";
+---
+
+<nav>
+  <ul class="nav-menu">
+    <li><a href={links.home}>home</a></li>
+    <li><a href={links.try}>try</a></li>
+    <li><a href={links.about}>about</a></li>
+    <li><a href={links.blog}>blog</a></li>
+  </ul>
+</nav>
+<style>
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin: var(--space-s);
+    padding: var(--space-s);
+  }
+  .nav-menu li {
+    list-style-type: none;
+    margin-right: var(--space-s);
+  }
+
+  .nav-menu a {
+    text-decoration: none;
+  }
+</style>

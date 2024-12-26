@@ -1,0 +1,31 @@
+---
+import Layout from "@layouts/Layout.astro";
+import links from "@data/links";
+
+const projectName = "KnotebookLM";
+---
+
+<Layout title={projectName}>
+  <main id="main">
+    <h1>About</h1>
+    <p>
+      Curious about AI, preferring to learn by building, and bowled over by
+      Google's new <s>homework machine</s> research tool, the <strong
+        >northridge devs</strong
+      > set out to recreate
+      <a href="https://notebooklm.google/" target="_blank">NotebookLM</a>.
+    </p>
+    <p>
+      They codenamed their project <strong
+        ><a href={links.try}>KnotebookLM</a></strong
+      >.
+    </p>
+    <p>
+      They also convened a journal club to read &amp discuss AI papers. They
+      wanted to know if machines can think. They wrote about what they learned,
+      what they've built, &amp how they built it in a <a href={links.blog}
+        >blog</a
+      >.
+    </p>
+  </main>
+</Layout>
