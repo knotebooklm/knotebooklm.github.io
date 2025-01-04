@@ -1,0 +1,30 @@
+---
+const { post } = Astro.props;
+---
+
+<a href={post.url}>
+  <li>
+    <h2>{post.frontmatter.title}</h2>
+    <p class="small italic">
+      {post.frontmatter.author.toLowerCase()} --
+      {new Date(post.frontmatter.pubDate).toDateString()}
+    </p>
+    <p class="small italic"></p>
+    <p>{post.frontmatter.description}</p>
+  </li>
+</a>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+
+  p {
+    margin-top: var(--space-3xs);
+  }
+
+  .small {
+    font-size: var(--step-0);
+    font-style: italic;
+  }
+</style>

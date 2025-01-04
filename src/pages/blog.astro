@@ -1,0 +1,46 @@
+---
+import type { MarkdownInstance } from "astro";
+import Layout from "@layouts/Layout.astro";
+import BlogPostItem from "@components/BlogPostItem.astro";
+
+type BarePost = {
+  title: string;
+  pubDate: string;
+  description: string;
+  author: string;
+  tags?: string[];
+};
+
+type BlogPost = MarkdownInstance<BarePost>;
+
+const rawPosts = import.meta.glob("./blog/*.md", { eager: true });
+const allPosts = Object.values(rawPosts) as BlogPost[];
+
+allPosts.sort((a, b) => {
+  if (a.frontmatter.pubDate < b.frontmatter.pubDate) return 1;
+  if (a.frontmatter.pubDate > b.frontmatter.pubDate) return -1;
+  return 0;
+});
+
+const projectName = "KnotebookLM";
+---
+
+<Layout title={projectName}>
+  <main id="main">
+    <h1>Blog</h1>
+    <ul>
+      {allPosts.map((post: any) => <BlogPostItem post={post} />)}
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  h1 {
+    margin-bottom: var(--space-xl);
+    font-size: var(--step-3);
+  }
+
+  ul {
+    list-style-type: none;
+  }
+</style>
