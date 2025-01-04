@@ -1,0 +1,16 @@
+export const contributors = [
+  "Walt Amorella",
+  "Remy Castle",
+  "Eason Chen",
+  "Jayden Cho",
+  "Kevin Finlay",
+  "Miguel Gonzalez Marcen",
+  "Jay He",
+  "Vincent Krause",
+  "Patrick Manio",
+  "Luke Matuszak",
+  "Damian Mikan",
+  "Abdullah Pehlari",
+  "Tomas Roth",
+  "Thomas Zanardi",
+];

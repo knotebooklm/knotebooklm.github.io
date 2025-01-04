@@ -1,3 +1,5 @@
+import { contributors } from "../data/contributors";
+
 class TextScramble {
   chars: string;
   el: HTMLElement;
@@ -85,20 +87,9 @@ function shuffle(array: string[]) {
   return array;
 }
 
-const names = shuffle([
-  "patrick",
-  "xavi",
-  "damian",
-  "walt",
-  "vincent",
-  "kevin",
-  "remy",
-  "kaden",
-  "tomas",
-  "jayden",
-  "miguel",
-  "jay",
-]);
+const names = shuffle(
+  contributors.map((fullName) => fullName.split(" ")[0].toLowerCase()),
+);
 
 const last = "the northridge dev knights";
 names.push(last);
